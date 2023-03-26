@@ -50,7 +50,14 @@ export class ContactForm extends Component {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
         />
-        <Btn type="submit">add contact</Btn>
+        <Btn
+          animate={{ scale: 1 }}
+          initial={{ scale: 0.7 }}
+          transition={{ repeat: Infinity, duration: 1 }}
+          type="submit"
+        >
+          add contact
+        </Btn>
       </Form>
     );
   }

@@ -6,12 +6,18 @@ import {
   Icon,
   ListContact,
 } from './ContactList.styled';
+import * as React from 'react';
 
 export const ContactList = ({ contacts, delContact }) => {
   return (
     <ListContact>
       {contacts.map(({ id, name, number }) => (
-        <List key={id}>
+        <List
+          key={id}
+          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          transition={{ duration: 0.4 }}
+        >
           <Wrap>
             <NameContact>{name}</NameContact>
             <Span>{number}</Span>

@@ -13,6 +13,9 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
 `;
+export const TextFilter = styled.span`
+  text-align: center;
+`;
 
 export const InputName = styled.input`
   margin-top: 10px;

@@ -1,10 +1,10 @@
-import { Label, Form, InputName } from './Filter.styled';
+import { Label, Form, InputName, TextFilter } from './Filter.styled';
 
 export const Filter = ({ filter, change }) => {
   return (
     <Form>
       <Label>
-        <span>Find contacts by name</span>
+        <TextFilter>Find contacts by name</TextFilter>
         <InputName
           type="text"
           name="filter"

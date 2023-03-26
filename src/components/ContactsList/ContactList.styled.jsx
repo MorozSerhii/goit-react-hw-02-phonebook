@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 export const Span = styled.span`
   margin-left: 5px;
   margin-right: 5px;
@@ -8,7 +9,7 @@ export const Span = styled.span`
 export const Wrap = styled.div`
   width: 280px;
 `;
-export const List = styled.li`
+export const List = styled(motion.li)`
   display: flex;
   margin-top: 10px;
   border-bottom: 1px solid black;
