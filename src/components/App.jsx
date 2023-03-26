@@ -37,7 +37,11 @@ export class App extends Component {
       contact.name.toLowerCase().includes(this.state.filter)
     );
     return (
-      <Container>
+      <Container
+        initial={{ scale: 0.9, opacity: 0.2, y: -600 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <h1>Phonebook</h1>
         <ContactForm
           contacts={this.state.contacts}

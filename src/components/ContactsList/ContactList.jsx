@@ -6,7 +6,8 @@ import {
   Icon,
   ListContact,
 } from './ContactList.styled';
-import * as React from 'react';
+
+import PropTypes from 'prop-types';
 
 export const ContactList = ({ contacts, delContact }) => {
   return (
@@ -41,4 +42,15 @@ export const ContactList = ({ contacts, delContact }) => {
       ))}
     </ListContact>
   );
+};
+
+ContactList.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
+  delContact: PropTypes.func.isRequired,
 };

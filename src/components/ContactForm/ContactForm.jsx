@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Btn, Form, InputName, Label } from './ContactForm.styled';
-
+import PropTypes from 'prop-types';
 export class ContactForm extends Component {
   state = {
     name: '',
@@ -50,15 +50,19 @@ export class ContactForm extends Component {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
         />
-        <Btn
-          animate={{ scale: 1 }}
-          initial={{ scale: 0.7 }}
-          transition={{ repeat: Infinity, duration: 1 }}
-          type="submit"
-        >
-          add contact
-        </Btn>
+        <Btn type="submit">add contact</Btn>
       </Form>
     );
   }
 }
+
+ContactForm.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
+  addContact: PropTypes.func.isRequired,
+};

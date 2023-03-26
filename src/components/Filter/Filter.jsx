@@ -1,4 +1,5 @@
 import { Label, Form, InputName, TextFilter } from './Filter.styled';
+import PropTypes from 'prop-types';
 
 export const Filter = ({ filter, change }) => {
   return (
@@ -16,4 +17,8 @@ export const Filter = ({ filter, change }) => {
       </Label>
     </Form>
   );
+};
+Filter.propTypes = {
+  filter: PropTypes.string.isRequired,
+  change: PropTypes.func.isRequired,
 };
